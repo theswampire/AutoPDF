@@ -1,9 +1,9 @@
 # AutoPDF
- Automatic PDF conversion and organisation (●'◡'●)
+ Convenient automatic PDF conversion and organisation (●'◡'●)
 
 
 
-With the power of [OfficeToPDF](https://github.com/cognidox/OfficeToPDF) AutoPDF will convert any office related document to `pdf`. ╰(*°▽°*)╯ For a complete list, take a look at [here](https://github.com/cognidox/OfficeToPDF#supported-file-types). Works only on **Windows** for now.
+With the power of [OfficeToPDF](https://github.com/cognidox/OfficeToPDF) AutoPDF will convert any office related document to `pdf`. ╰(\*°▽°\*)╯ For a complete list, take a look at [here](https://github.com/cognidox/OfficeToPDF#supported-file-types). Works only on **Windows** for now.
 
 
 
@@ -61,4 +61,14 @@ win10toast_click
 ## Help
 
 If any problems occur, please don't be afraid to create an issue or contact me directly. Any pull request is welcome :)
+
+
+
+ ## Future
+
+Much more sophisticated configuration paired with a simple graphical user interface would be amazing to have implemented. ╰(\*°▽°\*)╯
+
+But packaging is more pressing as currently it is unlikely that someone without any Python knowledge is able to install and run AutoPDF ಠ_ಠ.
+
+
 
