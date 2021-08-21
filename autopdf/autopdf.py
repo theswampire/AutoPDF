@@ -5,9 +5,9 @@ from queue import Queue
 
 import autopdf.config as config
 from .convert import Converter
+from .installer import install_app, check_package_existence
 from .logs import get_logger
 from .sync import create_env, FileSysListener
-from .installer import install_app, check_package_existence
 
 log = get_logger(__name__)
 

@@ -1,15 +1,17 @@
 import queue
+import shutil
 import subprocess
 import time
-from queue import Queue
 from pathlib import Path
-from win10toast_click import ToastNotifier
-from ..logs import get_logger
+from queue import Queue
 from typing import Union
-from ..sync import substitute_single_path, delete_env
-import autopdf.config as config
+
 from send2trash import send2trash, TrashPermissionError
-import shutil
+from win10toast_click import ToastNotifier
+
+import autopdf.config as config
+from ..logs import get_logger
+from ..sync import substitute_single_path, delete_env
 
 log = get_logger(__name__)
 

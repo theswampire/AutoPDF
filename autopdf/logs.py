@@ -1,7 +1,8 @@
 import logging
-from logging.handlers import TimedRotatingFileHandler
-import autopdf.config as config
 import sys
+from logging.handlers import TimedRotatingFileHandler
+
+import autopdf.config as config
 
 # from 'https://www.toptal.com/python/in-depth-python-logging'
 FORMATTER = logging.Formatter('[%(asctime)s: %(name)s — %(levelname)s] %(message)s')

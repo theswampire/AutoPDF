@@ -1,10 +1,12 @@
+import os
+import subprocess
 import sys
 from pathlib import Path
 from typing import List
-from autopdf.logs import get_logger
-import os
-import subprocess
+
 from send2trash import send2trash, TrashPermissionError
+
+from autopdf.logs import get_logger
 
 log = get_logger(__name__)
 
