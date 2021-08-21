@@ -1,0 +1,6 @@
+watchdog
+Send2Trash
+requests
+github3.py
+packaging
+win10toast_click
