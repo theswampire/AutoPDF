@@ -1,5 +1,6 @@
 import json
 import signal
+import sys
 from pathlib import Path
 from queue import Queue
 
@@ -85,7 +86,7 @@ class AutoPDF:
     @staticmethod
     def signal_handler(s, f):
         log.info('Shutting down')
-        exit(0)
+        sys.exit(0)
 
     def main_loop(self):
         while True:

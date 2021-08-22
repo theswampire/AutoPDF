@@ -72,3 +72,16 @@ But packaging is more pressing as currently it is unlikely that someone without 
 
 
 
+## Build
+
+[Nuitka](https://github.com/Nuitka/Nuitka) is used for building `exe`-Files.
+
+Following command is used to build releases (inside root directory of this repository):
+
+`python -m nuitka --standalone --include-data-file=AutoPDF.ico=AutoPDF.ico --output-dir=build --prefer-source-code --windows-icon-from-ico=AutoPDF.ico --windows-product-name=AutoPDF --windows-file-version=0.0.1 --windows-company-name=TheSwampire --windows-file
+-description="Automatic PDF Conversion & Organization Tool" --windows-product-name=AutoPDF main.py`
+
+This will generate a folder containing `AutoPDF.exe`. 
+
+If you prefer a single file add `--onefile`,  although in onefile-mode configuration won't be saved and OfficeToPDF.exe will be downloaded every time.
+

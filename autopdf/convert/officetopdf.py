@@ -129,7 +129,7 @@ class Converter:
         # TODO add icon
         toaster = ToastNotifier()
         toaster.show_toast(
-            title=title, msg=msg, icon_path=None, duration=duration, threaded=threaded,
+            title=title, msg=msg, icon_path=config.root.joinpath('AutoPDF.ico'), duration=duration, threaded=threaded,
             callback_on_click=callback_on_click
         )
 
