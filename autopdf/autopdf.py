@@ -64,7 +64,11 @@ class AutoPDF:
         if self.path_temp_root is None:
             if no_input:
                 raise ValueError('Configuration incomplete: temporary_path missing')
-            self.path_temp_root = Path(self._get_input('Root directory for temporary replica'))
+            while True:
+                self.path_temp_root = Path(self._get_input('Root directory for temporary replica'))
+                if self.path_temp_root != self.path_persistence_root:
+                    break
+                log.warning('Temporary directory can not be the same as persistence root')
         else:
             self.path_temp_root = Path(self.path_temp_root)
 
