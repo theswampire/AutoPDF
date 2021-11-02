@@ -11,7 +11,7 @@ from win10toast_click import ToastNotifier
 
 import autopdf.config as config
 from ..logs import get_logger
-from ..sync import substitute_single_path, delete_env
+from ..sync import substitute_single_path, delete_env, open_explorer
 
 log = get_logger(__name__)
 
@@ -98,7 +98,8 @@ class Converter:
 
         if path.suffix == '.pdf':
             log.info(f'File already PDF: copying to {target_path}')
-            self.toast('AutoPDF: already PDF', f'{path.name} does not need conversion - copying')
+            self.toast('AutoPDF: already PDF', f'{path.name} does not need conversion - copying',
+                       callback_on_click=self._open_explorer_callback_wrapper(target_path))
             shutil.copy2(path, target_path)
             return True
 
@@ -111,7 +112,7 @@ class Converter:
         if process.returncode == 0:
             # TODO decide on duration
             log.info(f'Successfully converted: {path} to {target_path}')
-            self.toast('Successfully converted', f'{path.name} to {target_path.name}')
+            self.toast('Successfully converted', f'{path.name} to {target_path.name}', callback_on_click=self._open_explorer_callback_wrapper(target_path))
             return True
         if process.returncode in self.error_codes.keys():
             log.warning(f'Error converting {path}: {self.error_codes[process.returncode]}')
@@ -137,3 +138,9 @@ class Converter:
         if path.suffix in self.file_types:
             return True
         return False
+
+    @staticmethod
+    def _open_explorer_callback_wrapper(path: Path):
+        def wrapped():
+            open_explorer(path)
+        return wrapped
